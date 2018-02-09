@@ -1,0 +1,17 @@
+{
+    "name": "credevlab/commerce-connector-magento",
+    "description": "Commerce Connector for Magento 2",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Aman Srivastava",
+            "email": "aman.srivastava@acquia.com"
+        }
+    ],
+    "require": {
+        "credevlab/commerce-connector" : "*"
+    },
+    "autoload": {
+        "psr-4": {"Credevlab\\CommerceConnector\\Magento\\": "src/"}
+    }
+}
