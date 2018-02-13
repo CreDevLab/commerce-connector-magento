@@ -9,3 +9,5 @@ $connection = new MagentoConnector(['base_url' => 'http://magento2.local/', 'tok
 $pr = $connection->getCatalogRepository()->getProductRepository();
 $product = $pr->get($sku);
 ```
+
+Reference: http://devdocs.magento.com/guides/v2.0/get-started/authentication/gs-authentication-token.html

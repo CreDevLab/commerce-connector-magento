@@ -2,12 +2,15 @@
 
 namespace Credevlab\CommerceConnector\Magento;
 
-
+use Credevlab\CommerceConnector\Magento\Catalog\CategoryRepository;
 use Credevlab\CommerceConnector\Magento\Catalog\ProductRepository;
+use Credevlab\CommerceConnector\Catalog\Api\CatalogRepositoryInterface;
 
-class CatalogRepository
+class CatalogRepository implements CatalogRepositoryInterface
 {
     protected $_productRepository;
+
+    protected $_categoryRepository;
 
     protected $_connection;
 
@@ -43,5 +46,15 @@ class CatalogRepository
         return $this->_productRepository;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getCategoryRepository()
+    {
+        if(!$this->_categoryRepository){
+            $this->_categoryRepository = new CategoryRepository($this->getConnection());
+        }
+        return $this->_categoryRepository;
+    }
 
 }

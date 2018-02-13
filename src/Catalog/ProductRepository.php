@@ -10,7 +10,6 @@ class ProductRepository extends AbstractRepository implements ProductRepositoryI
 
     public  function get($sku, $editMode = false, $forceReload = false)
     {
-        // TODO: Implement get() method.
         $client = $this->getConnection();
         $response = $client->request("GET", "rest/V1/products/".$sku);
         if($response->getStatusCode() == 200){
